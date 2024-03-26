@@ -3,13 +3,27 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from '../../container/auth/loginScreen';
+import {NavScreenTags} from '../constants/navScreenTags';
+import SignUpScreen from '../../container/auth/signUpScreen';
 
 const Stack = createStackNavigator();
+
+const AuthStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name={NavScreenTags.LOGIN_SCREEN} component={LoginScreen} />
+      <Stack.Screen
+        name={NavScreenTags.SIGN_UP_SCREEN}
+        component={SignUpScreen}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const RootStack = (): React.ReactElement => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name={NavScreenTags.AUTH_STACK} component={AuthStack} />
     </Stack.Navigator>
   );
 };
