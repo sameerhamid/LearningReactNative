@@ -5,6 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from '../../container/auth/loginScreen';
 import {NavScreenTags} from '../constants/navScreenTags';
 import SignUpScreen from '../../container/auth/signUpScreen';
+import {navigationRef} from '../utils/navigatorUtils';
 
 const Stack = createStackNavigator();
 
@@ -30,7 +31,7 @@ const RootStack = (): React.ReactElement => {
 
 const AppNavigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <RootStack />
     </NavigationContainer>
   );
