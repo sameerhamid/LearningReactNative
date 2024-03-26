@@ -3,6 +3,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../../container/home/homeScreen';
 import {NavScreenTags} from '../constants/navScreenTags';
+import {AuthStack} from './appNavigation';
 const HomeStack = createStackNavigator();
 
 interface Props {}

@@ -6,17 +6,22 @@ import LoginScreen from '../../container/auth/loginScreen';
 import {NavScreenTags} from '../constants/navScreenTags';
 import SignUpScreen from '../../container/auth/signUpScreen';
 import {navigationRef} from '../utils/navigatorUtils';
+import HomeContainer from './homeContainer';
 
 const Stack = createStackNavigator();
 
-const AuthStack = () => {
+export const AuthStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name={NavScreenTags.LOGIN_SCREEN} component={LoginScreen} />
       <Stack.Screen
         name={NavScreenTags.SIGN_UP_SCREEN}
         component={SignUpScreen}
       />
+      <Stack.Screen name={NavScreenTags.HOME_STACK} component={HomeContainer} />
     </Stack.Navigator>
   );
 };
