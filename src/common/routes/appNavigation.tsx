@@ -23,7 +23,10 @@ const AuthStack = () => {
 
 const RootStack = (): React.ReactElement => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name={NavScreenTags.AUTH_STACK} component={AuthStack} />
     </Stack.Navigator>
   );
